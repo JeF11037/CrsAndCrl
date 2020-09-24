@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrsAndCrl.MainMenu" 
+             BackgroundColor="DeepSkyBlue"
+             Title="Menu Page">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Button">
+                        <Setter Property="HorizontalOptions" Value="Center" />
+                        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                        <Setter Property="WidthRequest" Value="200"/>
+                        <Setter Property="HeightRequest" Value="50"/>
+                        <Setter Property="Margin" Value="20"/>
+                        <Setter Property="Font" Value="18" />
+                        <Setter Property="BackgroundColor" Value="Orange" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+
+            <Button
+                Text="1x1"
+                Clicked="HumanButton_Clicked"
+                ></Button>
+
+            <Button
+                Text="1xComputer"
+                Clicked="ComputerButton_Clicked"
+                ></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
