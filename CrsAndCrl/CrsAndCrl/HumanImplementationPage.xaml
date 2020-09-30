@@ -5,35 +5,43 @@
              BackgroundColor="DeepSkyBlue"
              Title="1X1">
     <ContentPage.Content>
-        <Grid x:Name="grid">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <StackLayout>
+            <Grid x:Name="grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <Grid.Resources>
-                <ResourceDictionary>
-                <Style TargetType="Image">
-                    <Setter Property="HorizontalOptions" Value="Center" />
-                    <Setter Property="VerticalOptions" Value="Center" />
-                    <Setter Property="HeightRequest" Value="110" />
-                    <Setter Property="WidthRequest" Value="110" />
-                </Style>
-                </ResourceDictionary>
-            </Grid.Resources>
-
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Image">
+                            <Setter Property="HorizontalOptions" Value="Center" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                            <Setter Property="HeightRequest" Value="110" />
+                            <Setter Property="WidthRequest" Value="110" />
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+            </Grid>
             <StackLayout BackgroundColor="DodgerBlue" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.ColumnSpan="3">
                 <Label
-                    x:Name="label"
-                    Text="0 : 0" 
-                    FontSize="12" 
+                    x:Name="label_text"
+                    Text="TicTacToe" 
+                    FontSize="50" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="WhiteSmoke"></Label>
+                
+                <Label
+                    x:Name="label_score"
+                    Text="Cross - 0 : 0 - Circle" 
+                    FontSize="35" 
                     HorizontalOptions="Center" 
                     VerticalOptions="CenterAndExpand"
                     TextColor="WhiteSmoke"></Label>
             </StackLayout>
-
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
