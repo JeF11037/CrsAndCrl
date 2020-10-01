@@ -51,6 +51,9 @@
                 <Button
                     WidthRequest="100"
                     HeightRequest="100"
+                    Margin="0, 0, 0, 10"
+                    BorderColor="DeepSkyBlue"
+                    BorderWidth="5"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     BackgroundColor="NavajoWhite"

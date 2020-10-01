@@ -35,7 +35,7 @@ namespace CrsAndCrl
             label_role = label_role_;
             bot_exist = bot_;
 
-            bot = new BotImplementation(table);
+            bot = new BotImplementation(table, CrossOrCircle);
 
             CreateGestureForImage();
             CreateImageGrid();
@@ -59,29 +59,39 @@ namespace CrsAndCrl
                     }
                     role = false;
                 }
+
                 CrossOrCircle = !CrossOrCircle;
 
                 if (bot_exist)
                 {
                     foreach (var el in grid.Children)
                     {
-                        if (Grid.GetRow(el) == bot.SimulateTurn()[0] && Grid.GetColumn(el) == bot.SimulateTurn()[01])
+                        if (bot.SimulateTurn() != null)
                         {
-                            Image img = (Image)el;
-                            if (CrossOrCircle)
+                            if (Grid.GetRow(boxi) != Grid.GetRow(el) && Grid.GetColumn(boxi) != Grid.GetColumn(el))
                             {
-                                img.Source = "cross.png";
-                                table[Grid.GetRow(img), Grid.GetColumn(img)] = 1;
+                                if (Grid.GetRow(el) == bot.SimulateTurn()[0] && Grid.GetColumn(el) == bot.SimulateTurn()[01])
+                                {
+                                    Image img = (Image)el;
+                                    if (CrossOrCircle)
+                                    {
+                                        img.Source = "cross.png";
+                                        table[Grid.GetRow(img), Grid.GetColumn(img)] = 1;
+                                    }
+                                    else
+                                    {
+                                        img.Source = "circle.png";
+                                        table[Grid.GetRow(img), Grid.GetColumn(img)] = 0;
+                                    }
+                                    CrossOrCircle = !CrossOrCircle;
+                                    break;
+                                }
                             }
-                            else
-                            {
-                                img.Source = "circle.png";
-                                table[Grid.GetRow(img), Grid.GetColumn(img)] = 0;
-                            }
-                            break;
                         }
                     }
                 }
+
+                
 
                 label_text.Text = "TicTacToe";
                 CheckTheWinner();
