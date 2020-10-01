@@ -44,14 +44,15 @@
                 <Label
                     x:Name="label_role"
                     Text="X" 
-                    FontSize="12" 
-                    HorizontalOptions="Start" 
-                    VerticalOptions="End"
+                    FontSize="30" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
                     TextColor="WhiteSmoke"></Label>
                 <Button
-                    WidthRequest="10"
-                    HorizontalOptions="Start"
-                    VerticalOptions="End"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
                     BackgroundColor="NavajoWhite"
                     Clicked="Button_Clicked"
                     ></Button>

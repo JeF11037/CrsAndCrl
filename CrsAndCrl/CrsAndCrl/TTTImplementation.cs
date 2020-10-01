@@ -63,7 +63,24 @@ namespace CrsAndCrl
 
                 if (bot_exist)
                 {
-                    
+                    foreach (var el in grid.Children)
+                    {
+                        if (Grid.GetRow(el) == bot.SimulateTurn()[0] && Grid.GetColumn(el) == bot.SimulateTurn()[01])
+                        {
+                            Image img = (Image)el;
+                            if (CrossOrCircle)
+                            {
+                                img.Source = "cross.png";
+                                table[Grid.GetRow(img), Grid.GetColumn(img)] = 1;
+                            }
+                            else
+                            {
+                                img.Source = "circle.png";
+                                table[Grid.GetRow(img), Grid.GetColumn(img)] = 0;
+                            }
+                            break;
+                        }
+                    }
                 }
 
                 label_text.Text = "TicTacToe";
