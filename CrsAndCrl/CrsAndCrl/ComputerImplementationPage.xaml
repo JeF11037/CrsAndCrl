@@ -1,12 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CrsAndCrl.ComputerImplementationPage">
+             x:Class="CrsAndCrl.ComputerImplementationPage"
+             BackgroundColor="DeepSkyBlue"
+             Title="1XComputer">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid x:Name="grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Image">
+                            <Setter Property="HorizontalOptions" Value="Center" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                            <Setter Property="HeightRequest" Value="110" />
+                            <Setter Property="WidthRequest" Value="110" />
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+            </Grid>
+            <StackLayout BackgroundColor="DodgerBlue" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.ColumnSpan="3">
+                <Label
+                    x:Name="label_text"
+                    Text="TicTacToe" 
+                    FontSize="50" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="WhiteSmoke"></Label>
+
+                <Label
+                    x:Name="label_score"
+                    Text="Cross - 0 : 0 - Circle" 
+                    FontSize="35" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="WhiteSmoke"></Label>
+                <Label
+                    x:Name="label_role"
+                    Text="X" 
+                    FontSize="12" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="End"
+                    TextColor="WhiteSmoke"></Label>
+                <Button
+                    WidthRequest="10"
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    BackgroundColor="NavajoWhite"
+                    Clicked="Button_Clicked"
+                    ></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

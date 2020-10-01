@@ -15,12 +15,7 @@ namespace CrsAndCrl
         public HumanImplementationPage()
         {
             InitializeComponent();
-            TTTImplementation ttt = new TTTImplementation(grid, label_score, label_text);
-        }
-
-        public async void CreateAMessage(string title, string message, string cancel)
-        {
-            await DisplayAlert(title, message, cancel);
+            TTTImplementation ttt = new TTTImplementation(grid, label_score, label_text, null, false);
         }
     }
 }
